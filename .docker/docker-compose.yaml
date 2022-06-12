@@ -8,7 +8,7 @@ services:
       default:
     volumes:
       - ./.docker/scripts/mongosetup.sh:/scripts/mongosetup.sh
-    entrypoint: [ "/scripts/mongosetup.sh" ]
+    entrypoint: ["sh", "/scripts/mongosetup.sh" ]
     depends_on:
       - mongodb
     user: root
