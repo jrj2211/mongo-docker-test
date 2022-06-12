@@ -8,9 +8,9 @@ services:
       default:
     volumes:
       - ./.docker/scripts/mongosetup.sh:/scripts/mongosetup.sh
-    entrypoint: [ "/scripts/mongosetup.sh" ]
     depends_on:
       - mongodb
+    command: tail -F /dev/null
   mongodb:
     hostname: mongodb
     container_name: mongodb
